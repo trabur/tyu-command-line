@@ -2,7 +2,7 @@
   "name": "tyu-command-line",
   "version": "1.0.1",
   "scripts": {
-    "dev": "ts-node src/index.ts",
+    "start": "ts-node src/index.ts",
     "build": "tsc"
   },
   "dependencies": {
