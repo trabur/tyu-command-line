@@ -1,5 +1,5 @@
 {
-  "name": "tyu",
+  "name": "tyu-command-line",
   "version": "1.0.1",
   "scripts": {
     "dev": "ts-node src/index.ts",
