@@ -13,6 +13,6 @@
      "experimentalDecorators": true,
      "sourceMap": true
   },
-  "include": ["src/**/*.ts", "object-relational-mapping/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }
