@@ -9,8 +9,6 @@ program
   .command('users')
   .description('show all users')
   .action(function () {
-    console.log('users');
-    // init users library
     tyu.users.run()
     tyu.users.all(function ({ message }: any) {
       console.log('users.all :::', message)
@@ -18,17 +16,23 @@ program
   })
 
 program
-  .command('build')
-  .description('build web site for deployment')
-  .action(() => {
-    console.log('build');
-  });
+  .command('register <email> <username> <password>')
+  .description('authenticate a user')
+  .action(function (email, username, password) {
+    tyu.users.run()
+    tyu.users.register(email, username, password, function ({ message }: any) {
+      console.log('users.register :::', message)
+    })
+  })
 
 program
-  .command('deploy')
-  .description('deploy web site to production')
-  .action(() => {
-    console.log('deploy');
-  });
+  .command('login <email> <password>')
+  .description('authenticate a user')
+  .action(function (email, password) {
+    tyu.users.run()
+    tyu.users.login(email, password, function ({ message }: any) {
+      console.log('users.login :::', message)
+    })
+  })
 
 program.parse(process.argv);
