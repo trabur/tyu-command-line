@@ -1,9 +1,14 @@
 #!/usr/bin/env ts-node
 
-import * as tyu from 'object-relational-mapping'
-
 import { Command } from 'commander';
 const program = new Command();
+
+var Socket = require("phoenix").Socket
+var w3cwebsocket = require("websocket").w3cwebsocket
+var socket = new Socket("wss://printedbasics.gigalixirapp.com/socket", {transport: w3cwebsocket})
+
+import { TYU } from 'object-relational-mapping'
+let tyu = new TYU(socket)
 
 program
   .command('users')
